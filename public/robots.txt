@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rueschebrink-dortmund.pages.dev/sitemap-index.xml

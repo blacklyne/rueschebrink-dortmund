@@ -1,0 +1,119 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site } from "../data/site";
+---
+
+<Layout
+  title="Datenschutz"
+  description="Datenschutzerklärung von Automobile Rüschebrink in Dortmund. DSGVO-konform."
+>
+  <section class="bg-cream py-20 md:py-28">
+    <div class="container-premium max-w-3xl">
+      <p class="eyebrow">DSGVO</p>
+      <h1 class="mt-4 font-serif-display text-4xl md:text-5xl font-bold">Datenschutz</h1>
+      <span class="gold-line"></span>
+
+      <div class="space-y-10 text-sm md:text-base text-anthracite">
+        <div>
+          <h2 class="font-serif-display text-2xl font-bold">1. Datenschutz auf einen Blick</h2>
+          <span class="gold-line"></span>
+          <h3 class="font-semibold mt-4">Allgemeine Hinweise</h3>
+          <p>
+            Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit
+            Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.
+            Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert
+            werden können.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-serif-display text-2xl font-bold">2. Verantwortliche Stelle</h2>
+          <span class="gold-line"></span>
+          <p>
+            Automobile Rüschebrink<br />
+            <em>Platzhalter - Vorname Nachname Rüschebrink</em><br />
+            {site.street}<br />
+            {site.zip} {site.city}<br />
+            Telefon: <a href={`tel:${site.phoneClean}`} class="text-gold hover:underline">{site.phone}</a><br />
+            E-Mail: <a href={`mailto:${site.email}`} class="text-gold hover:underline">{site.email}</a>
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-serif-display text-2xl font-bold">3. Datenerfassung auf dieser Website</h2>
+          <span class="gold-line"></span>
+
+          <h3 class="font-semibold mt-4">Server-Log-Dateien</h3>
+          <p>
+            Der Provider der Seiten erhebt und speichert automatisch Informationen in
+            sogenannten Server-Log-Dateien, die Ihr Browser automatisch übermittelt:
+            Browsertyp und Browserversion, verwendetes Betriebssystem, Referrer URL,
+            Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage, IP-Adresse.
+            Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+          </p>
+
+          <h3 class="font-semibold mt-4">Kontaktaufnahme</h3>
+          <p>
+            Wenn Sie uns per Telefon, E-Mail oder WhatsApp kontaktieren, werden die von
+            Ihnen mitgeteilten Daten (z. B. Name, Telefonnummer, Inhalt) zwecks Bearbeitung
+            Ihrer Anfrage gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b und f DSGVO.
+            Die Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich
+            sind, soweit keine gesetzlichen Aufbewahrungsfristen entgegenstehen.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-serif-display text-2xl font-bold">4. Externe Dienste</h2>
+          <span class="gold-line"></span>
+
+          <h3 class="font-semibold mt-4">Google Maps</h3>
+          <p>
+            Wir binden Google Maps zur Anzeige unseres Standorts ein. Anbieter ist die
+            Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Bei
+            Aufruf der Seite werden Daten an Google übertragen (u. a. IP-Adresse).
+            Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
+          </p>
+
+          <h3 class="font-semibold mt-4">WhatsApp</h3>
+          <p>
+            Beim Klick auf den WhatsApp-Button werden Sie zu WhatsApp (WhatsApp Ireland
+            Limited) weitergeleitet. Die dortige Datenverarbeitung erfolgt nach den
+            Bestimmungen des Anbieters.
+          </p>
+
+          <h3 class="font-semibold mt-4">Google Fonts</h3>
+          <p>
+            Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten Web Fonts,
+            die von Google bereitgestellt werden. Beim Aufruf einer Seite lädt Ihr Browser
+            die benötigten Schriftarten, um Texte korrekt anzuzeigen.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-serif-display text-2xl font-bold">5. Ihre Rechte</h2>
+          <span class="gold-line"></span>
+          <p>
+            Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten
+            personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der
+            Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser
+            Daten. Hierzu können Sie sich jederzeit unter den im Impressum angegebenen
+            Kontaktdaten an uns wenden.
+          </p>
+          <p class="mt-3">
+            Außerdem steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-serif-display text-2xl font-bold">6. SSL- / TLS-Verschlüsselung</h2>
+          <span class="gold-line"></span>
+          <p>
+            Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung
+            vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte
+            Verbindung erkennen Sie am "https://" in der Adresszeile Ihres Browsers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site } from "../data/site";
+---
+
+<Layout
+  title="Seite nicht gefunden"
+  description="Die aufgerufene Seite existiert nicht."
+>
+  <section class="bg-cream py-28 md:py-40">
+    <div class="container-premium max-w-2xl mx-auto text-center">
+      <p class="eyebrow justify-center">404</p>
+      <h1 class="mt-4 font-serif-display text-5xl md:text-7xl font-bold">
+        Hier geht es<br /><span class="text-gold">nicht weiter.</span>
+      </h1>
+      <span class="gold-line-centered"></span>
+      <p class="text-gray-700">
+        Die aufgerufene Seite existiert nicht oder wurde verschoben. Kein Problem -
+        unten finden Sie die wichtigsten Wege zurück.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/" class="btn-primary">Zur Startseite</a>
+        <a href={`tel:${site.phoneClean}`} class="btn-outline-gold">
+          Direkt anrufen
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

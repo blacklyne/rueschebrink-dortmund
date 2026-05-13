@@ -1,0 +1,44 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  highlight?: string;
+  subtitle?: string;
+  image: string;
+  imageAlt?: string;
+}
+
+const { eyebrow, title, highlight, subtitle, image, imageAlt = "" } = Astro.props;
+---
+
+<section class="relative isolate overflow-hidden">
+  <div class="absolute inset-0 -z-10">
+    <img
+      src={image}
+      alt={imageAlt}
+      class="h-full w-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="container-premium py-24 md:py-32 text-cream">
+    <p class="eyebrow text-gold-light">{eyebrow}</p>
+    <h1
+      class="mt-5 font-serif-display text-4xl md:text-6xl font-bold text-cream max-w-4xl text-shadow-soft"
+    >
+      {title}
+      {highlight && (
+        <>
+          <br /><span class="text-gold">{highlight}</span>
+        </>
+      )}
+    </h1>
+    {subtitle && (
+      <p class="mt-6 max-w-2xl text-base md:text-lg text-[#E8E0D3] text-shadow-soft">
+        {subtitle}
+      </p>
+    )}
+  </div>
+</section>

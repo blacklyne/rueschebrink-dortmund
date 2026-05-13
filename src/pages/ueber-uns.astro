@@ -1,0 +1,121 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import CTAFooterBlock from "../components/CTAFooterBlock.astro";
+
+const values = [
+  {
+    title: "Tradition",
+    text: "Familienbetrieb mit gewachsener Erfahrung - Sorgfalt und Wort halten gehören zum Geschäftsmodell.",
+  },
+  {
+    title: "Qualität",
+    text: "Premium-Service in jedem Detail. Hochwertige Produkte, präzises Handwerk, ehrliche Beratung.",
+  },
+  {
+    title: "Persönlichkeit",
+    text: "Sie haben direkten Kontakt zu Inhaber und Team. Keine Hotline, keine Standardantworten.",
+  },
+];
+---
+
+<Layout
+  title="Über uns - Familientradition in der Rüschebrinkstraße"
+  description="Automobile Rüschebrink - Familienbetrieb in Dortmund-Wambel. Die Straße trägt unseren Namen. Tradition, Qualität und persönliche Betreuung."
+  pageType="AboutPage"
+>
+  <PageHero
+    eyebrow="Über uns"
+    title="Die Straße"
+    highlight="trägt unseren Namen."
+    subtitle="Automobile Rüschebrink - Familienbetrieb mit Tradition in der Rüschebrinkstraße in Dortmund-Wambel."
+    image="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=2400&q=80"
+  />
+
+  <section class="bg-cream py-20 md:py-28">
+    <div class="container-premium grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="eyebrow">Unsere Geschichte</p>
+        <h2 class="mt-4 font-serif-display text-3xl md:text-5xl font-bold">
+          Familie Rüschebrink.<br />
+          <span class="text-gold">Hier zu Hause.</span>
+        </h2>
+        <span class="gold-line"></span>
+        <p class="text-gray-700">
+          Wer in der Rüschebrinkstraße sein Geschäft betreibt, hat eine Verbindung
+          zum Ort, die über das Tagesgeschäft hinausgeht. Wir leben Werkstatt-Handwerk
+          mit dem Anspruch, den unsere Kundinnen und Kunden seit Jahren von uns kennen.
+        </p>
+        <p class="mt-4 text-gray-700">
+          Premium-Service bedeutet bei uns nicht nur Qualität in der Arbeit, sondern
+          auch im Umgang. Wir nehmen uns Zeit für Beratung, für Erklärungen und für
+          das, was Sie tatsächlich brauchen - nicht für das, was sich gerade verkauft.
+        </p>
+
+        <p class="mt-6 text-sm text-gray-700">
+          <em>Platzhalter: Inhaber - Vorname Nachname Rüschebrink. Geschichte und Gründungsjahr nach Absprache ergänzen.</em>
+        </p>
+      </div>
+
+      <div class="relative aspect-[4/5] overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1200&q=80"
+          alt="Werkstatt-Atmosphäre - Familie Rüschebrink bei der Arbeit"
+          class="h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-anthracite to-transparent p-6">
+          <p class="text-xs uppercase tracking-[0.25em] text-gold-light">Rüschebrinkstraße 55</p>
+          <p class="font-serif-display text-2xl text-cream">Dortmund-Wambel</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="anthracite-bg py-20 md:py-28">
+    <div class="container-premium">
+      <div class="max-w-2xl">
+        <p class="eyebrow text-gold-light">Werte</p>
+        <h2 class="mt-4 font-serif-display text-3xl md:text-5xl font-bold text-cream">
+          Drei Werte.<br /><span class="text-gold">Ein Versprechen.</span>
+        </h2>
+        <span class="gold-line"></span>
+      </div>
+
+      <div class="mt-14 grid gap-8 md:grid-cols-3">
+        {
+          values.map((v, i) => (
+            <div>
+              <p class="font-serif-display text-5xl font-bold text-gold/30">
+                {String(i + 1).padStart(2, "0")}
+              </p>
+              <h3 class="mt-4 font-serif-display text-2xl font-bold text-cream">{v.title}</h3>
+              <span class="gold-line"></span>
+              <p class="text-[#D8CFC2]">{v.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 md:py-28">
+    <div class="container-premium max-w-3xl mx-auto text-center">
+      <p class="eyebrow justify-center">Reputation</p>
+      <h2 class="mt-4 font-serif-display text-3xl md:text-5xl font-bold">
+        <span class="text-gold">4.8 Sterne</span> - 18 Bewertungen.
+      </h2>
+      <span class="gold-line-centered"></span>
+      <p class="text-gray-700">
+        Stammkundschaft entsteht nicht durch Marketing, sondern durch Arbeit, der man
+        vertrauen kann. Wir freuen uns über jede einzelne Bewertung - und behandeln sie
+        als das, was sie ist: Verpflichtung.
+      </p>
+    </div>
+  </section>
+
+  <CTAFooterBlock
+    title="Wir freuen uns auf Sie."
+    subtitle="Ob ein erster Termin oder ein lang geplanter Service - rufen Sie an oder schreiben Sie über WhatsApp."
+  />
+</Layout>

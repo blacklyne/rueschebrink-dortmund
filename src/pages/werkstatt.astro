@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import CTAFooterBlock from "../components/CTAFooterBlock.astro";
+import { site } from "../data/site";
+
+const services = [
+  {
+    title: "Reparaturen",
+    text: "Mechanik, Elektrik, Bremsen, Auspuff, Fahrwerk - schnelle Diagnose, transparente Reparatur.",
+  },
+  {
+    title: "Inspektion & Wartung",
+    text: "Herstellervorgaben, Service nach Plan. Ölwechsel, Filter, Bremsflüssigkeit, alles dabei.",
+  },
+  {
+    title: "HU/AU-Vorbereitung",
+    text: "Wir bringen Ihr Fahrzeug TÜV-fit und übernehmen die HU/AU direkt im Haus.",
+  },
+  {
+    title: "Diagnose",
+    text: "Moderne Diagnosegeräte für alle gängigen Marken - Fehler finden, statt zu raten.",
+  },
+  {
+    title: "Klimaservice",
+    text: "Klimaanlagen-Check, Desinfektion und Wartung für angenehme Fahrten - das ganze Jahr.",
+  },
+  {
+    title: "Achsvermessung",
+    text: "Präzise Achseinstellung für gleichmäßigen Reifenverschleiß und exaktes Fahrverhalten.",
+  },
+];
+---
+
+<Layout
+  title="KFZ-Werkstatt Dortmund"
+  description="KFZ-Werkstatt in Dortmund-Wambel. Reparatur, Inspektion, HU/AU, Diagnose - alle Marken, faire Preise. Familientradition in der Rüschebrinkstraße."
+>
+  <PageHero
+    eyebrow="Werkstatt"
+    title="Ihre Werkstatt."
+    highlight="Mit Anspruch."
+    subtitle="Reparatur, Wartung und Diagnose für alle Marken - kompetent, fair und schnell. Familienbetrieb mit Anspruch an Qualität."
+    image="https://images.unsplash.com/photo-1632823471565-1ecdf07a8d23?auto=format&fit=crop&w=2400&q=80"
+  />
+
+  <section class="bg-cream py-20 md:py-28">
+    <div class="container-premium">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Leistungsspektrum</p>
+        <h2 class="mt-4 font-serif-display text-3xl md:text-5xl font-bold">
+          Alles rund ums Fahrzeug.<br />
+          <span class="text-gold">Aus einer Hand.</span>
+        </h2>
+        <span class="gold-line"></span>
+        <p class="text-gray-700">
+          Vom Routinecheck bis zur komplexen Reparatur - wir betreuen Ihr Fahrzeug
+          mit der Sorgfalt, die wir auch unserem eigenen gönnen würden.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {
+          services.map((s) => (
+            <article class="premium-card">
+              <p class="text-gold text-xs uppercase tracking-[0.25em]">Service</p>
+              <h3 class="mt-3 font-serif-display text-2xl font-bold">{s.title}</h3>
+              <span class="gold-line"></span>
+              <p class="text-gray-700">{s.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="anthracite-bg py-20 md:py-28">
+    <div class="container-premium grid lg:grid-cols-2 gap-12 items-center">
+      <div class="relative aspect-[4/3] overflow-hidden border border-gold/30">
+        <img
+          src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1400&q=80"
+          alt="Mechaniker arbeitet professionell am Premium-Fahrzeug"
+          class="h-full w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div>
+        <p class="eyebrow text-gold-light">Unser Anspruch</p>
+        <h2 class="mt-4 font-serif-display text-3xl md:text-5xl font-bold text-cream">
+          Faire Preise.<br />
+          <span class="text-gold">Premium-Qualität.</span>
+        </h2>
+        <span class="gold-line"></span>
+        <p class="text-[#D8CFC2]">
+          Wir kalkulieren transparent, kommunizieren ehrlich und arbeiten sauber.
+          Unsere Stammkundschaft vertraut uns seit Jahren - aus gutem Grund.
+        </p>
+
+        <ul class="mt-8 space-y-3 text-cream/90">
+          <li class="flex gap-3"><span class="text-gold">✓</span> Alle Marken, alle Modelle</li>
+          <li class="flex gap-3"><span class="text-gold">✓</span> Originalteile oder hochwertige Alternativen</li>
+          <li class="flex gap-3"><span class="text-gold">✓</span> Kostenvoranschlag vorab</li>
+          <li class="flex gap-3"><span class="text-gold">✓</span> Schnelle Bearbeitung, eingehaltene Termine</li>
+        </ul>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href={`tel:${site.phoneClean}`} class="btn-secondary">
+            Termin anfragen
+          </a>
+          <a
+            href={site.whatsapp}
+            target="_blank"
+            rel="noopener"
+            class="btn-outline-gold text-cream border-cream hover:bg-cream hover:text-anthracite"
+          >
+            Per WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTAFooterBlock
+    title="Werkstatt-Termin gewünscht?"
+    subtitle="Rufen Sie uns an oder schreiben Sie über WhatsApp - wir melden uns persönlich."
+  />
+</Layout>

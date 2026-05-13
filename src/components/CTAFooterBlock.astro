@@ -1,0 +1,46 @@
+---
+import { site } from "../data/site";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Premium-Service für Ihr Fahrzeug.",
+  subtitle = "Vereinbaren Sie Ihren Termin - persönlich, per Telefon oder über WhatsApp.",
+} = Astro.props;
+---
+
+<section class="relative overflow-hidden anthracite-bg">
+  <div
+    class="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-gold/10 blur-3xl"
+    aria-hidden="true"
+  ></div>
+  <div class="container-premium relative py-24 md:py-32 text-center">
+    <p class="eyebrow justify-center">Termin vereinbaren</p>
+    <h2 class="mt-5 font-serif-display text-3xl md:text-5xl font-bold text-cream">
+      {title}
+    </h2>
+    <span class="gold-line-centered"></span>
+    <p class="mt-2 max-w-2xl mx-auto text-[#D8CFC2]">{subtitle}</p>
+
+    <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+      <a href={`tel:${site.phoneClean}`} class="btn-secondary">
+        Anrufen - {site.phoneDisplay}
+      </a>
+      <a
+        href={site.whatsapp}
+        target="_blank"
+        rel="noopener"
+        class="btn-outline-gold"
+      >
+        WhatsApp-Termin
+      </a>
+    </div>
+
+    <p class="mt-8 text-sm text-[#9A8F7F]">
+      Mo - Fr 09:00 - 17:30  |  Sa 09:00 - 16:00  |  {site.street}, {site.zip} {site.city}
+    </p>
+  </div>
+</section>

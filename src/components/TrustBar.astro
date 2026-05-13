@@ -1,0 +1,27 @@
+---
+import { site } from "../data/site";
+
+const items = [
+  { label: "4.8 Google-Bewertungen", value: "18 Reviews" },
+  { label: "Reifenwechsel", value: "unter 30 Minuten" },
+  { label: "Aufbereitungs-Abo", value: "monatlich" },
+  { label: "Samstag", value: "geöffnet" },
+];
+---
+
+<section class="bg-anthracite text-cream">
+  <div class="container-premium grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 border-y border-white/10">
+    {
+      items.map((item) => (
+        <div class="flex flex-col items-center justify-center text-center py-6 px-4 gap-1">
+          <p class="font-serif-display text-lg md:text-xl font-bold text-gold">
+            {item.value}
+          </p>
+          <p class="text-[10px] md:text-xs uppercase tracking-[0.18em] text-[#D8CFC2]">
+            {item.label}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>
