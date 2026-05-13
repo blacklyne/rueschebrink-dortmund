@@ -1,0 +1,123 @@
+---
+interface Props {
+  beforeSrc: string;
+  afterSrc: string;
+  beforeAlt?: string;
+  afterAlt?: string;
+  beforeLabel?: string;
+  afterLabel?: string;
+}
+
+const {
+  beforeSrc,
+  afterSrc,
+  beforeAlt = "Vorher",
+  afterAlt = "Nachher",
+  beforeLabel = "Vorher",
+  afterLabel = "Nachher",
+} = Astro.props;
+
+const id = `ba-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div
+  class="ba-slider relative aspect-[4/3] w-full overflow-hidden rounded-3xl select-none"
+  data-ba={id}
+>
+  <img
+    src={afterSrc}
+    alt={afterAlt}
+    class="absolute inset-0 h-full w-full object-cover"
+    loading="lazy"
+    draggable="false"
+  />
+  <span class="floating-tag" style="top: 1rem; right: 1rem; background-color: #947B33; border-color: #947B33;">
+    {afterLabel}
+  </span>
+
+  <div
+    class="ba-before absolute inset-0 overflow-hidden"
+    style="clip-path: inset(0 50% 0 0);"
+  >
+    <img
+      src={beforeSrc}
+      alt={beforeAlt}
+      class="absolute inset-0 h-full w-full object-cover grayscale"
+      loading="lazy"
+      draggable="false"
+    />
+    <span class="floating-tag" style="top: 1rem; left: 1rem;">
+      {beforeLabel}
+    </span>
+  </div>
+
+  <button
+    type="button"
+    class="ba-handle absolute inset-y-0 left-1/2 -translate-x-1/2 w-[3px] bg-cream cursor-ew-resize touch-none"
+    aria-label="Vorher/Nachher Schieberegler bewegen"
+  >
+    <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-cream text-anthracite shadow-xl ring-2 ring-gold">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"></polyline>
+        <polyline points="9 18 15 12 9 6" transform="translate(6 0)"></polyline>
+      </svg>
+    </span>
+  </button>
+</div>
+
+<script>
+  type CleanupFn = () => void;
+  function initBA(): CleanupFn[] {
+    const cleanups: CleanupFn[] = [];
+    document.querySelectorAll<HTMLElement>(".ba-slider").forEach((slider) => {
+      const before = slider.querySelector<HTMLElement>(".ba-before");
+      const handle = slider.querySelector<HTMLElement>(".ba-handle");
+      if (!before || !handle) return;
+
+      let active = false;
+
+      const setPos = (clientX: number) => {
+        const rect = slider.getBoundingClientRect();
+        const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
+        const pct = (x / rect.width) * 100;
+        before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+        handle.style.left = `${pct}%`;
+      };
+
+      const onDown = (e: PointerEvent) => {
+        active = true;
+        slider.setPointerCapture(e.pointerId);
+        setPos(e.clientX);
+      };
+      const onMove = (e: PointerEvent) => {
+        if (!active) return;
+        setPos(e.clientX);
+      };
+      const onUp = (e: PointerEvent) => {
+        active = false;
+        try {
+          slider.releasePointerCapture(e.pointerId);
+        } catch {}
+      };
+
+      slider.addEventListener("pointerdown", onDown);
+      slider.addEventListener("pointermove", onMove);
+      slider.addEventListener("pointerup", onUp);
+      slider.addEventListener("pointercancel", onUp);
+
+      cleanups.push(() => {
+        slider.removeEventListener("pointerdown", onDown);
+        slider.removeEventListener("pointermove", onMove);
+        slider.removeEventListener("pointerup", onUp);
+        slider.removeEventListener("pointercancel", onUp);
+      });
+    });
+    return cleanups;
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => initBA());
+  } else {
+    initBA();
+  }
+</script>

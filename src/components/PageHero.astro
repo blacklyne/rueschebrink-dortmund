@@ -23,10 +23,15 @@ const { eyebrow, title, highlight, subtitle, image, imageAlt = "" } = Astro.prop
     <div class="hero-overlay"></div>
   </div>
 
-  <div class="container-premium py-24 md:py-32 text-cream">
+  <div
+    class="absolute -top-32 -right-32 w-[460px] h-[460px] rounded-full bg-gold/15 blur-[120px] -z-[5]"
+    aria-hidden="true"
+  ></div>
+
+  <div class="container-premium py-24 md:py-32 text-cream relative">
     <p class="eyebrow text-gold-light">{eyebrow}</p>
     <h1
-      class="mt-5 font-serif-display text-4xl md:text-6xl font-bold text-cream max-w-4xl text-shadow-soft"
+      class="mt-5 font-serif-display text-4xl md:text-6xl font-bold text-cream max-w-4xl text-shadow-soft leading-[1.05]"
     >
       {title}
       {highlight && (
@@ -35,8 +40,9 @@ const { eyebrow, title, highlight, subtitle, image, imageAlt = "" } = Astro.prop
         </>
       )}
     </h1>
+    <span class="gold-line"></span>
     {subtitle && (
-      <p class="mt-6 max-w-2xl text-base md:text-lg text-[#E8E0D3] text-shadow-soft">
+      <p class="mt-2 max-w-2xl text-base md:text-lg text-[#E8E0D3] text-shadow-soft">
         {subtitle}
       </p>
     )}

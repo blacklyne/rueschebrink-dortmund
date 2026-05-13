@@ -29,7 +29,7 @@ const values = [
     title="Die Straße"
     highlight="trägt unseren Namen."
     subtitle="Automobile Rüschebrink - Familienbetrieb mit Tradition in der Rüschebrinkstraße in Dortmund-Wambel."
-    image="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=2400&q=80"
+    image="/images/werkstatt-aussen.png"
   />
 
   <section class="bg-cream py-20 md:py-28">
@@ -57,17 +57,20 @@ const values = [
         </p>
       </div>
 
-      <div class="relative aspect-[4/5] overflow-hidden">
+      <div class="image-stack-card relative aspect-[4/5]">
         <img
-          src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1200&q=80"
-          alt="Werkstatt-Atmosphäre - Familie Rüschebrink bei der Arbeit"
+          src="/images/werkstatt-hexagon.png"
+          alt="Werkstatt-Atmosphäre - moderne Halle mit Hexagon-LED-Beleuchtung"
           class="h-full w-full object-cover"
           loading="lazy"
         />
-        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-anthracite to-transparent p-6">
+        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-anthracite via-anthracite/70 to-transparent p-7">
           <p class="text-xs uppercase tracking-[0.25em] text-gold-light">Rüschebrinkstraße 55</p>
-          <p class="font-serif-display text-2xl text-cream">Dortmund-Wambel</p>
+          <p class="font-serif-display text-2xl text-cream mt-1">Dortmund-Wambel</p>
         </div>
+        <span class="floating-tag" style="top: 1rem; right: 1rem;">
+          Modern. Premium.
+        </span>
       </div>
     </div>
   </section>

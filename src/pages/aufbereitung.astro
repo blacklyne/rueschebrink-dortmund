@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
 import CTAFooterBlock from "../components/CTAFooterBlock.astro";
+import BeforeAfter from "../components/BeforeAfter.astro";
 import { site, reviews } from "../data/site";
 
 const packages = [
@@ -49,13 +50,13 @@ const aboReview = reviews[2];
     title="Ihr Auto."
     highlight="Wie am ersten Tag."
     subtitle="Innen-, Außen- oder Komplett-Aufbereitung - mit Sorgfalt, hochwertigen Produkten und einem Auge fürs Detail."
-    image="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=2400&q=80"
+    image="/images/innenraum-lenkrad.png"
   />
 
   <section class="anthracite-bg relative overflow-hidden">
     <div class="absolute inset-0 -z-0 opacity-25">
       <img
-        src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=2000&q=80"
+        src="/images/werkstatt-hexagon.png"
         alt=""
         class="h-full w-full object-cover"
         loading="lazy"
@@ -103,18 +104,18 @@ const aboReview = reviews[2];
       </div>
 
       <div class="grid grid-cols-2 gap-4">
-        <div class="aspect-[3/4] overflow-hidden border border-gold/20">
+        <div class="image-stack-card aspect-[3/4] border border-gold/20">
           <img
-            src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=900&q=80"
-            alt="Hand poliert glänzenden Lack"
+            src="/images/innenraum-cockpit.png"
+            alt="Premium-Cockpit nach der Aufbereitung"
             class="h-full w-full object-cover"
             loading="lazy"
           />
         </div>
-        <div class="aspect-[3/4] overflow-hidden border border-gold/20 mt-12">
+        <div class="image-stack-card aspect-[3/4] border border-gold/20 mt-12">
           <img
-            src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=900&q=80"
-            alt="Detailaufnahme eines aufbereiteten Fahrzeugs"
+            src="/images/innenraum-lenkrad.png"
+            alt="Lenkrad und Sitz nach professioneller Innenaufbereitung"
             class="h-full w-full object-cover"
             loading="lazy"
           />
@@ -168,41 +169,42 @@ const aboReview = reviews[2];
   </section>
 
   <section class="bg-white py-20 md:py-28">
-    <div class="container-premium grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <p class="eyebrow">Vor &amp; Nach</p>
+    <div class="container-premium grid lg:grid-cols-5 gap-12 items-center">
+      <div class="lg:col-span-2">
+        <p class="eyebrow">Vorher &amp; Nachher</p>
         <h2 class="mt-4 font-serif-display text-3xl md:text-5xl font-bold">
           Der Unterschied.<br /><span class="text-gold">Mit Auge sichtbar.</span>
         </h2>
         <span class="gold-line"></span>
         <p class="text-gray-700">
           Lack, der wieder leuchtet. Polster, die frisch riechen. Felgen, die glänzen.
-          Wir zeigen Ihnen das Ergebnis - Vor- und Nachbilder gerne auf Anfrage.
+          Bewegen Sie den Schieberegler und erleben Sie den Unterschied selbst.
         </p>
-        <p class="mt-6 text-sm text-gray-700">
-          <em>Platzhalter: Vor-/Nach-Bilder vom Kunden ergänzen.</em>
+        <p class="mt-4 text-sm text-gray-700">
+          Wir zeigen Ihnen weitere Vor- und Nachbilder gerne persönlich.
         </p>
+        <a
+          href={site.whatsapp}
+          target="_blank"
+          rel="noopener"
+          class="btn-outline-gold mt-8"
+        >
+          Beispiele anfragen
+        </a>
       </div>
 
-      <div class="grid grid-cols-2 gap-4">
-        <div class="relative aspect-square overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=900&q=80"
-            alt="Vor der Aufbereitung"
-            class="h-full w-full object-cover grayscale"
-            loading="lazy"
-          />
-          <span class="absolute top-3 left-3 px-2 py-1 bg-anthracite text-cream text-xs uppercase tracking-[0.2em]">Vorher</span>
-        </div>
-        <div class="relative aspect-square overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80"
-            alt="Nach der Aufbereitung"
-            class="h-full w-full object-cover"
-            loading="lazy"
-          />
-          <span class="absolute top-3 left-3 px-2 py-1 bg-gold text-white text-xs uppercase tracking-[0.2em]">Nachher</span>
-        </div>
+      <div class="lg:col-span-3 gold-glow">
+        <BeforeAfter
+          beforeSrc="/images/innenraum-cockpit.png"
+          afterSrc="/images/innenraum-lenkrad.png"
+          beforeAlt="Innenraum vor der Aufbereitung"
+          afterAlt="Innenraum nach der Premium-Aufbereitung"
+          beforeLabel="Vorher"
+          afterLabel="Nachher"
+        />
+        <p class="mt-4 text-center text-xs uppercase tracking-[0.25em] text-gold">
+          Slider bewegen - Vorher / Nachher
+        </p>
       </div>
     </div>
   </section>

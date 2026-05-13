@@ -79,6 +79,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     border: 1px solid #080F12;
+    border-radius: 999px;
     transition: all 0.3s ease;
     cursor: pointer;
   }
@@ -102,8 +103,10 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     border: 1px solid #947B33;
+    border-radius: 999px;
     transition: all 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 12px 30px -15px rgba(148, 123, 51, 0.55);
   }
   .btn-secondary:hover {
     background-color: #6E5C25;
@@ -124,6 +127,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     border: 1px solid #947B33;
+    border-radius: 999px;
     transition: all 0.3s ease;
     cursor: pointer;
   }
@@ -185,12 +189,71 @@
     background-color: #FFFFFF;
     border: 1px solid #E8E0D3;
     padding: 2rem;
+    border-radius: 1.25rem;
     transition: all 0.4s ease;
   }
   .premium-card:hover {
     border-color: #947B33;
-    box-shadow: 0 18px 40px -25px rgba(8, 15, 18, 0.35);
-    transform: translateY(-3px);
+    box-shadow: 0 22px 50px -25px rgba(8, 15, 18, 0.4);
+    transform: translateY(-4px);
+  }
+
+  .img-frame {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .img-frame-sm {
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .img-frame-xl {
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .gold-glow {
+    position: relative;
+  }
+  .gold-glow::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(148,123,51,0.5), rgba(184,160,77,0.1));
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .gold-glow:hover::before {
+    opacity: 1;
+  }
+
+  .floating-tag {
+    position: absolute;
+    background-color: rgba(8, 15, 18, 0.85);
+    backdrop-filter: blur(12px);
+    color: #F8F3ED;
+    padding: 0.6rem 1rem;
+    border: 1px solid rgba(148, 123, 51, 0.4);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .image-stack-card {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -30px rgba(8, 15, 18, 0.55);
   }
 
   .hero-overlay {
