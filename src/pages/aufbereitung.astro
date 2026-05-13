@@ -110,11 +110,12 @@ const aboReview = reviews[2];
           class="h-full w-full object-cover"
           loading="lazy"
         />
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-anthracite via-anthracite/70 to-transparent p-7">
-          <p class="text-xs uppercase tracking-[0.25em] text-gold-light">
+        <div class="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-anthracite via-anthracite/85 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 p-7 z-10">
+          <p class="text-xs uppercase tracking-[0.25em] text-gold-light text-shadow-soft">
             Premium-Abo
           </p>
-          <p class="mt-1 font-serif-display text-2xl text-cream">
+          <p class="mt-1 font-serif-display text-2xl text-cream text-shadow-soft">
             30+ Kunden im Monatsabo.
           </p>
         </div>
@@ -196,13 +197,13 @@ const aboReview = reviews[2];
 
       <div class="lg:col-span-3 gold-glow">
         <BeforeAfter
-          beforeSrc="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80"
-          afterSrc="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80"
-          beforeAlt="Auto-Innenraum vor der Aufbereitung - matt und verstaubt"
-          afterAlt="Auto-Innenraum nach der Premium-Aufbereitung - klar und frisch"
+          beforeSrc="/images/innenraum-cockpit.png"
+          afterSrc="/images/innenraum-cockpit.png"
+          beforeAlt="Auto-Innenraum vor der Aufbereitung - staubig und matt"
+          afterAlt="Auto-Innenraum nach der Premium-Aufbereitung - frisch und glänzend"
           beforeLabel="Vorher"
           afterLabel="Nachher"
-          beforeFilter="saturate(0.35) brightness(0.55) contrast(0.85) sepia(0.18)"
+          beforeFilter="saturate(0.25) brightness(0.5) contrast(0.85) sepia(0.35) blur(0.4px)"
         />
         <p class="mt-4 text-center text-xs uppercase tracking-[0.25em] text-gold">
           Slider bewegen - Vorher / Nachher
