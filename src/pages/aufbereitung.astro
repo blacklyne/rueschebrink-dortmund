@@ -50,21 +50,21 @@ const aboReview = reviews[2];
     title="Ihr Auto."
     highlight="Wie am ersten Tag."
     subtitle="Innen-, Außen- oder Komplett-Aufbereitung - mit Sorgfalt, hochwertigen Produkten und einem Auge fürs Detail."
-    image="/images/innenraum-lenkrad.png"
+    image="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=2400&q=80"
+    imageAlt="Premium-Auto wird mit Wasser und Schaum aufbereitet"
   />
 
   <section class="anthracite-bg relative overflow-hidden">
-    <div class="absolute inset-0 -z-0 opacity-25">
-      <img
-        src="/images/werkstatt-hexagon.png"
-        alt=""
-        class="h-full w-full object-cover"
-        loading="lazy"
-      />
-      <div class="absolute inset-0 bg-anthracite/70"></div>
-    </div>
+    <div
+      class="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-gold/12 blur-[140px]"
+      aria-hidden="true"
+    ></div>
+    <div
+      class="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-gold/8 blur-[140px]"
+      aria-hidden="true"
+    ></div>
 
-    <div class="container-premium relative py-20 md:py-32 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="container-premium relative py-20 md:py-32 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div>
         <p class="eyebrow text-gold-light">Unser Premium-USP</p>
         <h2 class="mt-4 font-serif-display text-3xl md:text-5xl font-bold text-cream">
@@ -103,23 +103,24 @@ const aboReview = reviews[2];
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-4">
-        <div class="image-stack-card aspect-[3/4] border border-gold/20">
-          <img
-            src="/images/innenraum-cockpit.png"
-            alt="Premium-Cockpit nach der Aufbereitung"
-            class="h-full w-full object-cover"
-            loading="lazy"
-          />
+      <div class="image-stack-card relative aspect-[4/5] border border-gold/20">
+        <img
+          src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=80"
+          alt="Premium-Fahrzeug nach professioneller Aufbereitung - glänzender Lack"
+          class="h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-anthracite via-anthracite/70 to-transparent p-7">
+          <p class="text-xs uppercase tracking-[0.25em] text-gold-light">
+            Premium-Abo
+          </p>
+          <p class="mt-1 font-serif-display text-2xl text-cream">
+            30+ Kunden im Monatsabo.
+          </p>
         </div>
-        <div class="image-stack-card aspect-[3/4] border border-gold/20 mt-12">
-          <img
-            src="/images/innenraum-lenkrad.png"
-            alt="Lenkrad und Sitz nach professioneller Innenaufbereitung"
-            class="h-full w-full object-cover"
-            loading="lazy"
-          />
-        </div>
+        <span class="floating-tag" style="top: 1rem; right: 1rem;">
+          Monatlich
+        </span>
       </div>
     </div>
   </section>
@@ -195,12 +196,13 @@ const aboReview = reviews[2];
 
       <div class="lg:col-span-3 gold-glow">
         <BeforeAfter
-          beforeSrc="/images/innenraum-cockpit.png"
-          afterSrc="/images/innenraum-lenkrad.png"
-          beforeAlt="Innenraum vor der Aufbereitung"
-          afterAlt="Innenraum nach der Premium-Aufbereitung"
+          beforeSrc="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80"
+          afterSrc="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80"
+          beforeAlt="Auto-Innenraum vor der Aufbereitung - matt und verstaubt"
+          afterAlt="Auto-Innenraum nach der Premium-Aufbereitung - klar und frisch"
           beforeLabel="Vorher"
           afterLabel="Nachher"
+          beforeFilter="saturate(0.35) brightness(0.55) contrast(0.85) sepia(0.18)"
         />
         <p class="mt-4 text-center text-xs uppercase tracking-[0.25em] text-gold">
           Slider bewegen - Vorher / Nachher

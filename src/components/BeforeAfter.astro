@@ -6,6 +6,7 @@ interface Props {
   afterAlt?: string;
   beforeLabel?: string;
   afterLabel?: string;
+  beforeFilter?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   afterAlt = "Nachher",
   beforeLabel = "Vorher",
   afterLabel = "Nachher",
+  beforeFilter = "",
 } = Astro.props;
 
 const id = `ba-${Math.random().toString(36).slice(2, 9)}`;
@@ -42,7 +44,8 @@ const id = `ba-${Math.random().toString(36).slice(2, 9)}`;
     <img
       src={beforeSrc}
       alt={beforeAlt}
-      class="absolute inset-0 h-full w-full object-cover grayscale"
+      class="absolute inset-0 h-full w-full object-cover"
+      style={beforeFilter ? `filter: ${beforeFilter};` : undefined}
       loading="lazy"
       draggable="false"
     />
